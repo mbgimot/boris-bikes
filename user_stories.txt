@@ -14,6 +14,16 @@ User story 1 Nouns:
 - bike
 - docking station
 
+User story 1 Verbs:
+- use
+- like
+- release
+
 User story 2 Nouns:
 - person
 - bike
+
+User story 2 Verbs:
+- use
+- like
+- work
