@@ -1,0 +1,5 @@
+the error was a initialized constant
+filepath: Users/pedrocastanheira/.rvm/rubies/ruby-2.3.3/bin/
+line: 1
+error means: constant not defined within class
+solution: create the class (DockingStation)
