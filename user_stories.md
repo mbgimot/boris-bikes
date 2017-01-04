@@ -2,6 +2,10 @@
 
 Objects | Messages
 ------- | --------
-person |
-bike | release_from_docking_station
-bike | check_if_working
+Person |
+Bike | working?
+DockingStation | release_bike
+
+##Diagram##
+Bike <-- working? -- > true/false
+DockingStation <-- release_bike -- > to get a bike
