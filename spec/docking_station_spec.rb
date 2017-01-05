@@ -6,7 +6,7 @@ describe DockingStation do
     it 'releases bike' do
       should respond_to(:release_bike)
     end
-    it 'releases same bike' do
+    it 'releases bike if bike present' do
       subject.dock(bike)
       expect(subject.release_bike).to eq(bike)
     end
@@ -27,6 +27,10 @@ describe DockingStation do
     end
     it 'verifies if bike docked' do
       expect(subject.dock(bike)).to eq(bike)
+    end
+    it 'dock error when bike already present' do
+      subject.dock(bike)
+      expect {subject.dock(bike)}.to raise_error("Bike already docked")
     end
   end
 end

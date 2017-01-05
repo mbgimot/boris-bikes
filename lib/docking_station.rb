@@ -5,10 +5,11 @@ class DockingStation
 
   def release_bike
     raise "No bike present" unless bike
-    bike
+    @bike
   end
 
   def dock(bike)
+    raise "Bike already docked" if @bike
     @bike = bike
   end
 end
