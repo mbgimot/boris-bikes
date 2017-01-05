@@ -7,6 +7,7 @@ Bike | working?
 Bike | dock
 DockingStation | release_bike
 DockingStation | has_bike?
+DockingStation | empty? 
 
 
 ##Diagram##
