@@ -20,13 +20,16 @@ class DockingStation
   end
 
   def dock(bike)
-    raise "Bike already docked" if full?
+    raise "Docking Station Full" if full?
     @bikes << bike
   end
 
   private
+
+  attr_reader :bikes
+
   def full?
-    @bikes.count >= DEFAULT_CAPACITY ? true : false
+    @bikes.count >= capacity ? true : false
   end
 
   def empty?

@@ -30,18 +30,18 @@ describe DockingStation do
     it 'verifies if bike docked' do
       expect(subject.dock(bike)).to include(bike)
     end
-    it 'dock error when 20 bike are present' do
-      DockingStation::DEFAULT_CAPACITY.times { subject.dock(bike) }
-      expect {subject.dock(bike)}.to raise_error("Bike already docked")
+    it 'dock error when 20 bikes are present' do
+      subject.capacity.times { subject.dock(bike) }
+      expect {subject.dock(bike)}.to raise_error("Docking Station Full")
     end
   end
 
   describe '#initialize' do
     it 'sets capacity' do
-      expect(subject.instance_variable_get(:@capacity)).to eq(15)
+      expect(subject.capacity).to eq(15)
     end
     it 'default capcity' do
-      expect(DockingStation.new.instance_variable_get(:@capacity)).to eq(20)
+      expect(DockingStation.new.capacity).to eq(DockingStation::DEFAULT_CAPACITY)
     end
     end
 end
