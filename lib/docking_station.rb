@@ -1,6 +1,9 @@
 require_relative 'bike.rb'
 
 class DockingStation
+
+  DEFAULT_CAPACITY = 20
+
   def bikes
     @bikes
   end
@@ -21,7 +24,7 @@ class DockingStation
 
   private
   def full?
-    @bikes.count >= 20 ? true : false
+    @bikes.count >= DEFAULT_CAPACITY ? true : false
   end
 
   def empty?

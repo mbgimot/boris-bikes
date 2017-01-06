@@ -29,7 +29,7 @@ describe DockingStation do
       expect(subject.dock(bike)).to include(bike)
     end
     it 'dock error when 20 bike are present' do
-      20.times { subject.dock(bike) }
+      DockingStation::DEFAULT_CAPACITY.times { subject.dock(bike) }
       expect {subject.dock(bike)}.to raise_error("Bike already docked")
     end
   end
