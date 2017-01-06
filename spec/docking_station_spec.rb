@@ -26,10 +26,10 @@ describe DockingStation do
       should respond_to(:dock).with(1).argument
     end
     it 'verifies if bike docked' do
-      expect(subject.dock(bike)).to eq(bike)
+      expect(subject.dock(bike)).to include(bike)
     end
-    it 'dock error when bike already present' do
-      subject.dock(bike)
+    it 'dock error when 20 bike are present' do
+      20.times { subject.dock(bike) }
       expect {subject.dock(bike)}.to raise_error("Bike already docked")
     end
   end
