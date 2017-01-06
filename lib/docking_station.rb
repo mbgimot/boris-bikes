@@ -10,7 +10,7 @@ class DockingStation
   end
 
   def release_bike
-    raise "No bike present" if @bikes.count == 0
+    raise "No bike present" if @bikes.empty?
     @bikes[-1]
   end
 
