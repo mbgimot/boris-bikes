@@ -2,6 +2,8 @@ require 'docking_station'
 
 describe DockingStation do
   bike = Bike.new
+  subject { @ds = DockingStation.new(15) }
+
   describe '#release_bike' do
     it 'releases bike' do
       should respond_to(:release_bike)
@@ -33,4 +35,13 @@ describe DockingStation do
       expect {subject.dock(bike)}.to raise_error("Bike already docked")
     end
   end
+
+  describe '#initialize' do
+    it 'sets capacity' do
+      expect(subject.instance_variable_get(:@capacity)).to eq(15)
+    end
+    it 'default capcity' do
+      expect(DockingStation.new.instance_variable_get(:@capacity)).to eq(20)
+    end
+    end
 end
